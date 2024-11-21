@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso Práctico: Automatización Inteligente de Campañas con IA</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f2f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #444;
+        }
+        label {
+            display: block;
+            margin: 15px 0 5px;
+            font-weight: bold;
+        }
+        input, select, textarea, button {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .result-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #e9f5e9;
+            border-radius: 10px;
+            border-left: 5px solid #28a745;
+        }
+        .result-section h2 {
+            color: #28a745;
+        }
+    </style>
+    <script>
+        function generateAutomation() {
+            const campaignGoal = document.getElementById("campaignGoal").value;
+            const currentSteps = document.getElementById("currentSteps").value;
+            const toolChoice = document.getElementById("toolChoice").value;
+
+            let newAction = "Para el objetivo de '" + campaignGoal + "', sugerimos utilizar la herramienta de IA '" + toolChoice + "' para: \n\n";
+            newAction += "1. Automatizar los procesos actuales descritos: " + currentSteps + ". \n";
+            newAction += "2. Configurar flujos personalizados con IA, aprovechando " + toolChoice + " para realizar un marketing predictivo y un seguimiento automatizado que incremente el impacto de la campaña. \n";
+            newAction += "3. Aplicar estrategias de optimización basadas en analítica avanzada, permitiendo así una mejor segmentación y personalización.\n";
+
+            document.getElementById("newActionResult").innerText = newAction;
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Automatización Inteligente de Campañas con IA</h1>
+        <p>Completa esta guía interactiva para transformar una campaña básica en una automatizada usando IA.</p>
+        
+        <form onsubmit="event.preventDefault(); generateAutomation();">
+            <label for="campaignGoal">Objetivo de la campaña:</label>
+            <input type="text" id="campaignGoal" placeholder="Ejemplo: Incrementar conversiones en un 15%">
+            
+            <label for="currentSteps">Describe los pasos actuales de tu campaña:</label>
+            <textarea id="currentSteps" placeholder="Ejemplo: Enviar correos manualmente, seguimiento telefónico..."></textarea>
+            
+            <label for="toolChoice">Selecciona una herramienta de IA para optimizar:</label>
+            <select id="toolChoice">
+                <option value="HubSpot">HubSpot</option>
+                <option value="ActiveCampaign">ActiveCampaign</option>
+                <option value="Google Ads">Google Ads</option>
+                <option value="ChatGPT API">ChatGPT API</option>
+            </select>
+            
+            <button type="submit">Generar Acción Automatizada</button>
+        </form>
+
+        <div class="result-section" id="newActionResultContainer">
+            <h2>Solución Automatizada Propuesta:</h2>
+            <p id="newActionResult">Rellena los campos y presiona el botón para obtener una acción automatizada.</p>
+        </div>
+    </div>
+</body>
+</html>
